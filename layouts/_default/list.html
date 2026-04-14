@@ -1,0 +1,35 @@
+{{ define "main" }}
+  {{ if .IsHome }}
+    <ul class="post-list">
+      {{ range where .Site.RegularPages "Section" "posts" }}
+      <li>
+        <h2 class="post-item-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <div class="post-item-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          · {{ math.Round (div (countwords .Content) 200.0) }} min read
+        </div>
+        {{ with .Params.summary }}<p class="post-item-summary">{{ . }}</p>{{ end }}
+        {{ with .Params.tags }}
+        <div class="post-tags">
+          {{ range . }}<a href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+        </div>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    <h1 class="page-title">{{ .Title }}</h1>
+    <ul class="post-list">
+      {{ range .Pages }}
+      <li>
+        <h2 class="post-item-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <div class="post-item-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          · {{ math.Round (div (countwords .Content) 200.0) }} min read
+        </div>
+        {{ with .Params.summary }}<p class="post-item-summary">{{ . }}</p>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+{{ end }}
