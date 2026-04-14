@@ -1,0 +1,18 @@
+baseURL = "https://m3u8.com/"
+languageCode = "en-us"
+title = "m3u8.com"
+
+[taxonomies]
+  tag = "tags"
+
+[permalinks]
+  posts = "/posts/:slug/"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos = false
+    guessSyntax = false
+
+[params]
+  description = "Personal blog of Matthew Szatmary"
