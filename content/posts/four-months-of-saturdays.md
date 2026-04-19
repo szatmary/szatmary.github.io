@@ -5,7 +5,9 @@ tags: ["cad", "3d-printing", "facet"]
 summary: "I built a CAD program because the ones I had didn't fit what I wanted to do."
 ---
 
-These days, the CAD program I use most is one I wrote myself. Two years ago, a program like this would have taken a team. What happened in between is that the tools I design with stopped fitting me, and the tools I code with started doing a lot more of the work.
+These days, the CAD program I use most is [one I wrote myself](https://github.com/firstlayer-xyz/Facet). Two years ago, a program like this would have taken a team. What happened in between is that the tools I design with stopped fitting me, and the tools I code with started doing a lot more of the work.
+
+![Facet with a Golden Gate Bridge model in the viewport and an AI assistant panel discussing how to color the deck.](/images/facet-aiview.png)
 
 I invested in my first 3D printer during the COVID lockdown. For a nerd like me it was close to an ideal hobby: part engineering, part craft, part excuse to tinker, with a direct loop from "thing in my head" to "thing in my hand." As a programmer, I was used to the first half of that loop (take an idea, turn it into something usable), but the output was always pixels on a screen. This time it was a physical object I could set on my desk. The hobby has changed a lot since then. What used to be a finicky kit you tuned for hours before getting a decent print is now a box that mostly just works, at a price point that would have been unbelievable five years ago. The hardware is genuinely good now, and it's getting better and cheaper fast.
 
@@ -36,6 +38,10 @@ I didn't intend to build a full CAD program, just something for my personal need
 Live debugging went in. Physical units became first-class types, so `8 mm` and `45 deg` are real values the compiler understands, not floats you hope are in the right scale. The language grew into something that felt like a real language instead of a macro system. I added the ability to click a face in the 3D viewport and jump straight to the line of code that created it. Parameters with ranges turned into sliders in the UI, so I could drag a value and watch the model respond. Library imports got a package manager shaped like Go's, so you can pull a library straight from a Git URL.
 
 Four months of Saturdays later: [Facet](https://github.com/firstlayer-xyz/Facet). I finally have a CAD package I actually like using. It's probably not for everyone, it's still a little buggy, and frankly I don't know what its future looks like.
+
+![A parametric rocket in Facet, with sliders driving radius, height, and fin count.](/images/facet-rocket.png)
+
+And because I can't resist scratching my own itches: the library I wanted for threaded holes, years after that OpenSCAD morning, is a few lines of import away.
 
 ## Gourmet slop
 
